@@ -1,69 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-<link rel="icon" href="./Icons/fov-icon.jpg" type="image/x-icon" />
-
-    <title>Weather-Report</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" href="./Icons/fov-icon.jpg" type="image/x-icon"/>
+  <link rel="stylesheet" href="./style.css" />
+  <title>Weather-Report</title>
 </head>
 <body>
   <h1>WEATHER APP</h1>
-  <table>
-    <tr>
-      <td>
-      <div class="container">
-       
-        <!-- searchbar section -->
-        <div id="card">
-            <input type="text" name="" id="InputVal" placeholder="enter city name" spellcheck="false">
-            <button id="search" onclick="citySearch()" ><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
 
-        <!-- weather image ,cityname,temperature section -->
-       
-          <div class="details">
-            <span id="cur-weather"></span>
-          <img id="web-img" src="./Icons/sunny-cloudy.webp" alt="Weather Icon">
-        <h1 id="temp">22<sup>o</sup>c</h1>
-        <h2 id="city" >New York</h2>
+  
+  <div class="main-wrapper">
+    
+    <!-- Left Side: Current Weather Container -->
+    <div class="container">
+      <!-- Searchbar -->
+      <div id="card">
+        <input type="text" id="InputVal" placeholder="Enter city name" spellcheck="false">
+        <button id="search" onclick="citySearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <!-- Weather Image, Temp, City -->
+      <div class="details">
+        <span id="cur-weather"></span>
+        <img id="web-img" src="./Icons/sunny-cloudy.webp" alt="Weather Icon">
+        <h1 id="temp">22<sup>o</sup>C</h1>
+        <h2 id="city">New York</h2>
+      </div>
+
+      <!-- Humidity and Wind Section -->
+      <div class="wind">
+        <div class="col">
+          <img src="./Icons/Humidity.png" class="humidity" />
+          <div class="hum-per">
+            <p id="humValue">50%</p>
+            <p>Humidity</p>
           </div>
-         
-          <!-- Humidity and wind section -->
-        <div class="wind">
-          <div class="col" >
-            <img src="./Icons/Humidity.png" class="humidity">
-         <div class="hum-per">
-          <p id="humValue" >50%</p>
-          <p >Humidity</p>
-         </div>
+        </div>
 
-         <div class="col" >
-            <img src="./Icons/wind.png" class="Wind">
-         <div class="wind-per">
-          <p id="windValue">50%</p>
-          <p >Wind</p>
-         </div>
+        <div class="col">
+          <img src="./Icons/wind.png" class="Wind" />
+          <div class="wind-per">
+            <p id="windValue">50%</p>
+            <p>Wind</p>
           </div>
-
-       
         </div>
-       
-    </div> 
-      </td>
+      </div>
+    </div>
 
-      <td>
-        <div id="container-2">
-        </div>
-      </td>
+    <!-- Right Side: Forecast Boxes -->
+    <div id="container-2">
+      <!-- Forecast boxes will go here dynamically -->
+    </div>
+  </div>
 
-    </tr>
-  </table>
-    <script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
